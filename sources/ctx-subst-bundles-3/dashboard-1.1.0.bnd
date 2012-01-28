@@ -1,0 +1,6 @@
+Bundle-SymbolicName: obcc-parking-example.dashboard
+Bundle-Version: 1.1.0
+Private-Package: cz.zcu.kiv.osgi.demo.parking.dashboard
+Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.dashboard.Activator
+Import-Package: cz.zcu.kiv.osgi.demo.parking.gate.statistics;version='[1.0.0,2.0.0)',\
+	*

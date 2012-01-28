@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type='text/xsl' href='http://www.osgi.org/www/obr2html.xsl'?>
+
+<repository lastmodified='20111229162544.842' name='Release'>
+  <resource id='ctx-subst-bundles-1.control-1.0.0/1.0.1' presentationname='ctx-subst-bundles-1.control-1.0.0' symbolicname='ctx-subst-bundles-1.control-1.0.0' uri='ctx-subst-bundles-1.control-1.0.0/ctx-subst-bundles-1.control-1.0.0-1.0.1.jar' version='1.0.1'>
+    <size>
+      3270
+    </size>
+    <capability name='bundle'>
+      <p n='manifestversion' v='2'/>
+      <p n='presentationname' v='ctx-subst-bundles-1.control-1.0.0'/>
+      <p n='symbolicname' v='ctx-subst-bundles-1.control-1.0.0'/>
+      <p n='version' t='version' v='1.0.1'/>
+    </capability>
+    <require extend='false' filter='(&amp;(package=cz.zcu.kiv.osgi.ctxsubst.gate.statistics)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))' multiple='false' name='package' optional='false'>
+      Import package cz.zcu.kiv.osgi.ctxsubst.gate.statistics ;version=[1.0.0,2.0.0)
+    </require>
+    <require extend='false' filter='(&amp;(package=org.osgi.framework)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.osgi.framework
+    </require>
+    <require extend='false' filter='(&amp;(package=org.slf4j)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.slf4j
+    </require>
+  </resource>
+  <resource id='ctx-subst-bundles-1.gate-1.0.0/1.0.1' presentationname='ctx-subst-bundles-1.gate-1.0.0' symbolicname='ctx-subst-bundles-1.gate-1.0.0' uri='ctx-subst-bundles-1.gate-1.0.0/ctx-subst-bundles-1.gate-1.0.0-1.0.1.jar' version='1.0.1'>
+    <size>
+      5072
+    </size>
+    <capability name='bundle'>
+      <p n='manifestversion' v='2'/>
+      <p n='presentationname' v='ctx-subst-bundles-1.gate-1.0.0'/>
+      <p n='symbolicname' v='ctx-subst-bundles-1.gate-1.0.0'/>
+      <p n='version' t='version' v='1.0.1'/>
+    </capability>
+    <capability name='package'>
+      <p n='package' v='cz.zcu.kiv.osgi.ctxsubst.gate.statistics'/>
+      <p n='uses' v='org.slf4j,cz.zcu.kiv.osgi.ctxsubst.parking.flow'/>
+      <p n='version' t='version' v='1.0.0'/>
+    </capability>
+    <require extend='false' filter='(&amp;(package=cz.zcu.kiv.osgi.ctxsubst.parking.flow)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))' multiple='false' name='package' optional='false'>
+      Import package cz.zcu.kiv.osgi.ctxsubst.parking.flow ;version=[1.0.0,2.0.0)
+    </require>
+    <require extend='false' filter='(&amp;(package=org.osgi.framework)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.osgi.framework
+    </require>
+    <require extend='false' filter='(&amp;(package=org.slf4j)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.slf4j
+    </require>
+  </resource>
+  <resource id='ctx-subst-bundles-1.parkingplace-1.0.0/1.0.1' presentationname='ctx-subst-bundles-1.parkingplace-1.0.0' symbolicname='ctx-subst-bundles-1.parkingplace-1.0.0' uri='ctx-subst-bundles-1.parkingplace-1.0.0/ctx-subst-bundles-1.parkingplace-1.0.0-1.0.1.jar' version='1.0.1'>
+    <size>
+      5281
+    </size>
+    <capability name='bundle'>
+      <p n='manifestversion' v='2'/>
+      <p n='presentationname' v='ctx-subst-bundles-1.parkingplace-1.0.0'/>
+      <p n='symbolicname' v='ctx-subst-bundles-1.parkingplace-1.0.0'/>
+      <p n='version' t='version' v='1.0.1'/>
+    </capability>
+    <capability name='package'>
+      <p n='package' v='cz.zcu.kiv.osgi.ctxsubst.parking.flow'/>
+      <p n='uses' v='cz.zcu.kiv.osgi.ctxsubst.parking.status,org.slf4j'/>
+      <p n='version' t='version' v='1.0.0'/>
+    </capability>
+    <capability name='package'>
+      <p n='package' v='cz.zcu.kiv.osgi.ctxsubst.parking.status'/>
+      <p n='uses' v='org.slf4j'/>
+      <p n='version' t='version' v='1.0.0'/>
+    </capability>
+    <require extend='false' filter='(&amp;(package=org.osgi.framework)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.osgi.framework
+    </require>
+    <require extend='false' filter='(&amp;(package=org.slf4j)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.slf4j
+    </require>
+  </resource>
+  <resource id='ctx-subst-bundles-1.trafficlane-1.0.0/1.0.1' presentationname='ctx-subst-bundles-1.trafficlane-1.0.0' symbolicname='ctx-subst-bundles-1.trafficlane-1.0.0' uri='ctx-subst-bundles-1.trafficlane-1.0.0/ctx-subst-bundles-1.trafficlane-1.0.0-1.0.1.jar' version='1.0.1'>
+    <size>
+      2692
+    </size>
+    <capability name='bundle'>
+      <p n='manifestversion' v='2'/>
+      <p n='presentationname' v='ctx-subst-bundles-1.trafficlane-1.0.0'/>
+      <p n='symbolicname' v='ctx-subst-bundles-1.trafficlane-1.0.0'/>
+      <p n='version' t='version' v='1.0.1'/>
+    </capability>
+    <require extend='false' filter='(&amp;(package=org.osgi.framework)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.osgi.framework
+    </require>
+    <require extend='false' filter='(&amp;(package=org.slf4j)(version&gt;=0.0.0))' multiple='false' name='package' optional='false'>
+      Import package org.slf4j
+    </require>
+  </resource>
+</repository>
