@@ -90,7 +90,7 @@ public class GateStatistics implements IGateStatistics
 		logger.info(getIdentification()+": get count {}", cnt);
 		return cnt;
 	}
-
+	
 
 	@Override
 	public String getIdentification()
