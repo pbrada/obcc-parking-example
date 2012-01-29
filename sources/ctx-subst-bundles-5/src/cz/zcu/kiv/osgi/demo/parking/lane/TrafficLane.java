@@ -5,10 +5,10 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.api.IGateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.gate.statistics.IGateStatistics;
 import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
 
-import cz.zcu.kiv.osgi.demo.parking.api.IVehicleSink;
+import cz.zcu.kiv.osgi.demo.parking.gate.vehiclesink.IVehicleSink;
 import cz.zcu.kiv.osgi.demo.parking.gate.vehiclesink.VehicleSink;
 import cz.zcu.kiv.osgi.demo.parking.lane.statistics.LaneStatistics;
 import cz.zcu.kiv.osgi.demo.parking.sign.roadsign.IRoadSign;

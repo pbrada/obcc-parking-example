@@ -5,9 +5,8 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.api.IVehicleFlow;
-import cz.zcu.kiv.osgi.demo.parking.api.IVehicleSink;
 import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.carpark.flow.IVehicleFlow;
 import cz.zcu.kiv.osgi.demo.parking.carpark.flow.VehicleFlow;
 
 

@@ -3,8 +3,7 @@ package cz.zcu.kiv.osgi.demo.parking.carpark.statistics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.api.CountingStatisticsAbstractBaseImpl;
-import cz.zcu.kiv.osgi.demo.parking.api.IParkingStatistics;
+import cz.zcu.kiv.osgi.demo.parking.statsbase.CountingStatisticsAbstractBaseImpl;
 
 public class ParkingStatistics extends CountingStatisticsAbstractBaseImpl implements IParkingStatistics
 {

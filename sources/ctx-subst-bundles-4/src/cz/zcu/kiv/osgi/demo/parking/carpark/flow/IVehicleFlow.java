@@ -1,4 +1,4 @@
-package cz.zcu.kiv.osgi.demo.parking.api;
+package cz.zcu.kiv.osgi.demo.parking.carpark.flow;
 
 public interface IVehicleFlow
 {

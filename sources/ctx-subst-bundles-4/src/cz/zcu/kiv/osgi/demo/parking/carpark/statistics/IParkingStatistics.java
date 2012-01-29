@@ -1,4 +1,6 @@
-package cz.zcu.kiv.osgi.demo.parking.api;
+package cz.zcu.kiv.osgi.demo.parking.carpark.statistics;
+
+import cz.zcu.kiv.osgi.demo.parking.statsbase.ICountingStatistics;
 
 /**
  * Added in this revision, INS-ertion diff.

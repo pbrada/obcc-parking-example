@@ -4,9 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //import cz.zcu.kiv.osgi.demo.parking.api.ICountingStatistics;
-import cz.zcu.kiv.osgi.demo.parking.api.IGateStatistics;
-import cz.zcu.kiv.osgi.demo.parking.api.ILaneStatistics;
 import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.gate.statistics.IGateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.lane.statistics.ILaneStatistics;
 import cz.zcu.kiv.osgi.demo.parking.lane.statistics.LaneStatistics;
 
 public class Dashboard implements Runnable

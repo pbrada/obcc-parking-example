@@ -1,4 +1,7 @@
-package cz.zcu.kiv.osgi.demo.parking.api;
+package cz.zcu.kiv.osgi.demo.parking.gate.statistics;
+
+import cz.zcu.kiv.osgi.demo.parking.statsbase.ICountingStatistics;
+import cz.zcu.kiv.osgi.demo.parking.carpark.status.IParkingStatus;
 
 /**
  * Evolved in this version, by extending IParkingStatus: SPE-cialization diff.

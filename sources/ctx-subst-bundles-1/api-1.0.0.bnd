@@ -1,4 +1,0 @@
-Bundle-SymbolicName: obcc-parking-example.api
-Bundle-Version: 1.0.0
-Export-Package: cz.zcu.kiv.osgi.demo.parking.api
-X-ParkingExample-BundleRev: 1

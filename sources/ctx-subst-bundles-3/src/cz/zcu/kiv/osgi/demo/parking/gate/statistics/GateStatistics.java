@@ -3,9 +3,8 @@ package cz.zcu.kiv.osgi.demo.parking.gate.statistics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.api.IGateStatistics;
-import cz.zcu.kiv.osgi.demo.parking.api.IParkingStatus;
 import cz.zcu.kiv.osgi.demo.parking.carpark.status.ParkingStatus;
+import cz.zcu.kiv.osgi.demo.parking.carpark.status.IParkingStatus;
 
 /**
  * Extended version of GateStatistics, depends on both VehicleFlow and ParkingStatus.

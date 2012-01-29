@@ -1,4 +1,6 @@
-package cz.zcu.kiv.osgi.demo.parking.api;
+package cz.zcu.kiv.osgi.demo.parking.gate.statistics;
+
+import cz.zcu.kiv.osgi.demo.parking.statsbase.ICountingStatistics;
 
 public interface IGateStatistics extends ICountingStatistics
 {

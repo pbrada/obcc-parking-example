@@ -17,9 +17,8 @@ DEST=${DEST_BASE}-2
 
 rm -f ${DEST}/*
 cp ${SRC}/*.jar ${DEST}
-cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.api.jar ${DEST}
+cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.statsbase.jar ${DEST}
 cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.dashboard.jar ${DEST}
-cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.gate.jar ${DEST}
 cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.carpark.jar ${DEST}
 
 echo --- app rev 3
@@ -28,6 +27,7 @@ DEST=${DEST_BASE}-3
 
 rm -f ${DEST}/*
 cp ${SRC}/*.jar ${DEST}
+cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.statsbase.jar ${DEST}
 cp ${SRC_BASE}-1/generated/${BUNDLE_PREFIX}.carpark.jar ${DEST}
 
 echo --- app rev 4
@@ -45,7 +45,7 @@ DEST=${DEST_BASE}-5
 rm -f ${DEST}/*
 cp ${SRC}/*.jar ${DEST}
 cp ${SRC_BASE}-3/generated/${BUNDLE_PREFIX}.dashboard.jar ${DEST}
-cp ${SRC_BASE}-4/generated/${BUNDLE_PREFIX}.api.jar ${DEST}
+cp ${SRC_BASE}-4/generated/${BUNDLE_PREFIX}.statsbase.jar ${DEST}
 cp ${SRC_BASE}-4/generated/${BUNDLE_PREFIX}.gate.jar ${DEST}
 cp ${SRC_BASE}-4/generated/${BUNDLE_PREFIX}.carpark.jar ${DEST}
 

@@ -3,7 +3,6 @@ package cz.zcu.kiv.osgi.demo.parking.carpark.status;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.api.IParkingStatus;
 
 
 /**

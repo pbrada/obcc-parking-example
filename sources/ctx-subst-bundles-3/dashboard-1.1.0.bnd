@@ -1,5 +1,5 @@
 Bundle-SymbolicName: obcc-parking-example.dashboard
 Bundle-Version: 1.1.0
 Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.dashboard.Activator
-Export-Package: cz.zcu.kiv.osgi.demo.parking.api
 X-ParkingExample-BundleRev: 2
+Private-Package: cz.zcu.kiv.osgi.demo.parking.dashboard

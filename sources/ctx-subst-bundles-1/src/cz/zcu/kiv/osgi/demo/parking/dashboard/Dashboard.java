@@ -3,10 +3,10 @@ package cz.zcu.kiv.osgi.demo.parking.dashboard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.api.ICountingStatistics;
-import cz.zcu.kiv.osgi.demo.parking.api.ILaneStatistics;
 import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.lane.statistics.ILaneStatistics;
 import cz.zcu.kiv.osgi.demo.parking.lane.statistics.LaneStatistics;
+import cz.zcu.kiv.osgi.demo.parking.statsbase.ICountingStatistics;
 
 public class Dashboard implements Runnable
 {
