@@ -24,7 +24,7 @@ public class Activator implements BundleActivator
     public void start(BundleContext context) throws Exception
     {
         logger.info("RoadSign.r1 activator: start");
-        // to provoke provided services to appear in log
+        // fake service registration to provoke provided services to appear in log
         sign = RoadSign.getInstance();
         sign.switchOn();
     }

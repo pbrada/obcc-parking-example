@@ -5,6 +5,9 @@ import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cz.zcu.kiv.osgi.demo.parking.carpark.flow.VehicleFlow;
+import cz.zcu.kiv.osgi.demo.parking.carpark.status.ParkingStatus;
+
 public class Activator implements BundleActivator
 {
 	
@@ -19,6 +22,9 @@ public class Activator implements BundleActivator
 	public void start(BundleContext context) throws Exception
 	{
 		logger.info("Parking.r1 activator: start");
+		// fake service registration to provoke log appearance
+		VehicleFlow.getInstance();
+		ParkingStatus.getInstance();
 	}
 
 	@Override

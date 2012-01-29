@@ -22,7 +22,7 @@ public class Activator implements BundleActivator
     public void start(BundleContext context) throws Exception
     {
         logger.info("TrafficLane.r5 activator: start");
-        // to provoke provided services to appear in log
+        // fake service registration to provoke provided services to appear in log
         LaneStatistics.getInstance();
 
         // start traffic simulator

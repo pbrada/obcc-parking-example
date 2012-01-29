@@ -19,7 +19,7 @@ public class Activator implements BundleActivator
 	public void start(BundleContext context) throws Exception
 	{
 		logger.info("TrafficLane.r3 activator: start");
-		// lane statistics still provided by Gate component in r3
+		// lane statistics service still provided by Gate component in r3
 	}
 
 	@Override

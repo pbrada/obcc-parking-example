@@ -17,7 +17,7 @@ public class Dashboard implements Runnable
 	
 	Logger logger = null;
 
-	// dependencies, intentionally generalized type on this endpoint
+	// dependencies, full gate stats now
 	IGateStatistics gateStats = null;
 	ILaneStatistics laneStats = null;
 	

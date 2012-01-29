@@ -30,7 +30,7 @@ public class Activator implements BundleActivator
 	public void start(BundleContext context) throws Exception
 	{
 		logger.info("CarPark.r4 activator: start");
-		// provoke provided services into log
+		// fake service registration provoke provided services into log
 		ParkingStatus.getInstance();
 		VehicleFlow.getInstance();
 		ParkingStatistics.getInstance();

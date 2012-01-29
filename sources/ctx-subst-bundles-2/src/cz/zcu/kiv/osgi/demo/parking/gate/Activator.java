@@ -22,7 +22,7 @@ public class Activator implements BundleActivator
 	public void start(BundleContext context) throws Exception
 	{
 		logger.info("Gate.r2 activator: start");
-		// provoke constructor entry in log
+		// fake service registration provoke constructor entry in log
 		GateStatistics.getInstance();
 		LaneStatistics.getInstance();		
 	}

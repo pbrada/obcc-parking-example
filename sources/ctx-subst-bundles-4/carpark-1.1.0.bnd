@@ -5,3 +5,4 @@ Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.carpark.Activator
 Export-Package: cz.zcu.kiv.osgi.demo.parking.carpark.flow;version=1.0.0,\
 	cz.zcu.kiv.osgi.demo.parking.carpark.status;version=1.0.0,\
 	cz.zcu.kiv.osgi.demo.parking.carpark.statistics;version=1.0.0
+X-ParkingExample-BundleRev: 2	

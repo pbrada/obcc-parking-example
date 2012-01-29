@@ -4,3 +4,5 @@ Private-Package: cz.zcu.kiv.osgi.demo.parking.gate
 Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.gate.Activator
 Export-Package: cz.zcu.kiv.osgi.demo.parking.gate.statistics,\
 	cz.zcu.kiv.osgi.demo.parking.lane.statistics
+X-ParkingExample-BundleRev: 1
+ 

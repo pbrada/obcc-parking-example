@@ -28,7 +28,7 @@ public class Activator implements BundleActivator
 	public void start(BundleContext context) throws Exception
 	{
 		logger.info("Gate.r4 activator: start");
-		// to provoke provided services to appear in log
+		// fake service registration to provoke provided services to appear in log
 		GateStatistics.getInstance();
 		// removed LaneStatistics.getInstance();
 		VehicleSink.getInstance();

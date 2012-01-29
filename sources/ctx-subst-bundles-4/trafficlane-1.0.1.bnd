@@ -3,3 +3,4 @@ Private-Package: cz.zcu.kiv.osgi.demo.parking.lane
 Bundle-Version: 1.0.1
 Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.lane.Activator
 Export-Package: cz.zcu.kiv.osgi.demo.parking.lane.statistics
+X-ParkingExample-BundleRev: 2

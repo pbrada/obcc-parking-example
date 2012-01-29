@@ -3,3 +3,4 @@ Private-Package: cz.zcu.kiv.osgi.demo.parking.sign
 Bundle-Version: 1.0.0
 Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.sign.Activator
 Export-Package: cz.zcu.kiv.osgi.demo.parking.sign.roadsign
+X-ParkingExample-BundleRev: 1

@@ -1,14 +1,10 @@
 package cz.zcu.kiv.osgi.demo.parking.gate.statistics;
 
-import java.util.Random;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cz.zcu.kiv.osgi.demo.parking.api.IGateStatistics;
-import cz.zcu.kiv.osgi.demo.parking.api.IVehicleFlow;
 import cz.zcu.kiv.osgi.demo.parking.api.IParkingStatus;
-import cz.zcu.kiv.osgi.demo.parking.carpark.flow.VehicleFlow;
 import cz.zcu.kiv.osgi.demo.parking.carpark.status.ParkingStatus;
 
 /**
@@ -24,12 +20,11 @@ public class GateStatistics implements IGateStatistics
 	private Logger logger = null;
 	
 	// dependencies
-	private IVehicleFlow parkingPlace = null;
+//	private IVehicleFlow parkingPlace = null;
 	private IParkingStatus parkingStatus = null;
 	
 	private int entered = 0;
 	private int leaved = 0;
-	private Random r = null;
 	
 	/** 
 	 * Fake service provisioning.
@@ -48,9 +43,8 @@ public class GateStatistics implements IGateStatistics
 		logger = LoggerFactory.getLogger("parking-demo");
 		logger.info("GateStats.r3 <init>");
 		
-		parkingPlace = VehicleFlow.getInstance();
+//		parkingPlace = VehicleFlow.getInstance();
 		parkingStatus = ParkingStatus.getInstance();
-		r = new Random();
 		clear();
 	}
 	
