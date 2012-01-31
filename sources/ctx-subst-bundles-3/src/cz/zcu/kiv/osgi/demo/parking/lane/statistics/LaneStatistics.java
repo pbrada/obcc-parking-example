@@ -9,6 +9,8 @@ public class LaneStatistics implements ILaneStatistics
 	private Logger logger = null;
 	
 	private int vehicleCount = 0;
+	private int secondsElapsed = 0;
+	private long timerStart = 0L;
 	
 	/**
 	 * Fake service provisioning.
@@ -29,29 +31,42 @@ public class LaneStatistics implements ILaneStatistics
 	}
 	
 	@Override
-	public String getIdentification()
-	{
-		return "LaneStatistics@Gate";
-	}
-
-	@Override
-	public int getEventCount()
-	{
-		logger.info(getIdentification()+": count {}", vehicleCount); 
-		return vehicleCount;
-	}
-
-	@Override
 	public int getCountVehiclesPassed()
 	{
 		logger.info(getIdentification()+": vehicles passed count {}", vehicleCount);
 		return vehicleCount;
 	}
 	
+    @Override
+    public int getVehiclesPerInterval(int seconds)
+    {
+        secondsElapsed = (int)((System.currentTimeMillis() - timerStart) / 1000);
+        int freq = (int) (1.0 * seconds / secondsElapsed * vehicleCount);
+        if (freq == 0)
+            freq = vehicleCount;
+        logger.warn(getIdentification()+": getVehPerInterval() UNEXPECTEDLY CALLED!  (returning vehicle freq for {}-sec interval after {} secs of run time)",seconds,secondsElapsed);
+        return freq;
+    }
+
+    @Override
+    public String getIdentification()
+    {
+        return "LaneStatistics@Gate";
+    }
+
+    @Override
+    public int getEventCount()
+    {
+        logger.info(getIdentification()+": count {}", vehicleCount); 
+        return vehicleCount;
+    }
+
 	@Override
 	public void clear()
 	{
 		vehicleCount = 0;
+		secondsElapsed = 0;
+		timerStart = System.currentTimeMillis();
 		logger.info(getIdentification()+": counters cleared");
 	}
 
