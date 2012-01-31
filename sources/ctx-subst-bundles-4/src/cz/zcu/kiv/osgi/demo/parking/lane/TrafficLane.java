@@ -27,7 +27,7 @@ public class TrafficLane implements Runnable
 		logger = LoggerFactory.getLogger("parking-demo");
 		logger.info("TrafficLane.r4 <init>");
 		this.vehicleSink = VehicleSink.getInstance();
-		this.lane = LaneStatistics.getInstance();
+		this.lane = (LaneStatistics) LaneStatistics.getInstance();
 	}
 	
 	/**

@@ -14,7 +14,7 @@ public class LaneStatistics extends CountingStatisticsAbstractBaseImpl implement
 	/**
 	 * Fake service provisioning.
 	 */
-	public static LaneStatistics getInstance()
+	public static ILaneStatistics getInstance()
 	{
 		if (instance == null) {
 			instance = new LaneStatistics();
