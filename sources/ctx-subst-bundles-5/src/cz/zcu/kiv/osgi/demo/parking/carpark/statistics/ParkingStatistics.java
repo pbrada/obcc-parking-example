@@ -64,13 +64,6 @@ public class ParkingStatistics extends CountingStatisticsAbstractBaseImpl implem
 		addToEventCount(cnt);
 	}
 
-    @Override
-    public boolean hasBeenFull()
-    {
-        logger.info("{}: hasBeenFull? We don't know.",getIdentification());
-        return false;
-    }
-
 	@Override
 	public void clear()
 	{
