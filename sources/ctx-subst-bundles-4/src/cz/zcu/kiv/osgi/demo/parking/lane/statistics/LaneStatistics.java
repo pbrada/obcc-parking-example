@@ -42,7 +42,11 @@ public class LaneStatistics extends CountingStatisticsAbstractBaseImpl implement
     public int getVehiclesPerInterval(int seconds)
     {
         secondsElapsed = (int)((System.currentTimeMillis() - timerStart) / 1000);
-        int freq = (int) (1.0 * seconds / secondsElapsed * vehicleCount);
+        int freq;
+        if (secondsElapsed == 0)
+            freq = vehicleCount;
+        else
+            freq = (int) (1.0 * seconds / secondsElapsed * vehicleCount);
         if (freq == 0)
             freq = vehicleCount;
         logger.warn(getIdentification()+": getVehPerInterval() UNEXPECTEDLY CALLED!  (returning vehicle freq for {}-sec interval after {} secs of run time)",seconds,secondsElapsed);
