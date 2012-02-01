@@ -29,7 +29,7 @@ public class Activator implements BundleActivator
 	@Override
 	public void start(BundleContext context) throws Exception
 	{
-		logger.info("CarPark.r4 activator: start");
+		logger.info("CarPark.r5 activator: start");
 		// fake service registration provoke provided services into log
 		ParkingStatus.getInstance();
 		VehicleFlow.getInstance();
@@ -39,7 +39,7 @@ public class Activator implements BundleActivator
 	@Override
 	public void stop(BundleContext context) throws Exception
 	{
-		logger.info("CarPark.r4 activator: stop");
+		logger.info("CarPark.r5 activator: stop");
 	}
 
 }

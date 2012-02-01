@@ -2,9 +2,6 @@ package cz.zcu.kiv.osgi.demo.parking.carpark.status;
 
 /**
  * Evolved in this version, SPE-cialization diff.
- * 
- * @author brada
- *
  */
 public interface IParkingStatus
 {	

@@ -7,9 +7,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Evolved in this version, see IParkingStatus: SPE-cialization diff.
- * 
- * @author brada
- *
  */
 public class ParkingStatus implements IParkingStatus, IParkingStatusUpdate
 {

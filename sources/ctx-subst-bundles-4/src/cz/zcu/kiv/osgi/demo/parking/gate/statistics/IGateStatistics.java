@@ -5,9 +5,6 @@ import cz.zcu.kiv.osgi.demo.parking.carpark.status.IParkingStatus;
 
 /**
  * Evolved in this version, by extending IParkingStatus: SPE-cialization diff.
- * 
- * @author brada
- *
  */
 public interface IGateStatistics extends ICountingStatistics, IParkingStatus
 {
