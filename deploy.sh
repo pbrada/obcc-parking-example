@@ -1,6 +1,8 @@
 #!/bin/sh
 
 APPREV=$1
+echo Deploying bundles of application revision ${APPREV} to container 
+
 # if [ "x${APPREV}" == "x" ]; then
 #     echo Defaulting to app rev 1 -- specify cmdline parameter to change
 # 	APPREV=1
