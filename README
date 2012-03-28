@@ -1,6 +1,6 @@
 
 This is a set of OSGi bundles to demonstrate various scenarios in bundle
-substitutability and versioning.
+substitutability and versioning. The implementation uses OSGi core services.
 
 See the OBCC project for more: http://www.assembla.com/spaces/obcc/ .
 
