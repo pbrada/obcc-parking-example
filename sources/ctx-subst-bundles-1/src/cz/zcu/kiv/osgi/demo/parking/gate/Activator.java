@@ -5,8 +5,10 @@ import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
-import cz.zcu.kiv.osgi.demo.parking.lane.statistics.LaneStatistics;
+import cz.zcu.kiv.osgi.demo.parking.gate.statistics.IGateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.gate.statistics.impl.GateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.lane.statistics.ILaneStatistics;
+import cz.zcu.kiv.osgi.demo.parking.lane.statistics.impl.LaneStatistics;
 
 public class Activator implements BundleActivator
 {
@@ -22,9 +24,8 @@ public class Activator implements BundleActivator
 	public void start(BundleContext context) throws Exception
 	{
 		logger.info("Gate.r1 activator: start");
-		// fake service registration, provoke constructor entry in log
-		GateStatistics.getInstance();
-		LaneStatistics.getInstance();
+		context.registerService(IGateStatistics.class.getName(), GateStatistics.getInstance(), null);
+		context.registerService(ILaneStatistics.class.getName(), LaneStatistics.getInstance(), null);
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import the projects as plain Java projects and then
 * set source folders to the "src/" subfolder
 * add JARs of org.osgi.core 4.2 , slf4j api to classpath (as external JARs or user libraries)
 * add to classpath as JARs (not "external JARs") the missing bundles, taking them from 
-  the "generated/" folders of preceding app revisions 
+  the "generated/" folders of preceding app revisions -- see the table in PDF in doc/ folder 
+  to get the reference list of which bundle from which app revision project to add where
 * make sure that the JDK library is in project's classpath (sometimes the import left it out)
 
