@@ -1,6 +1,9 @@
 
 This is a set of OSGi bundles to demonstrate various scenarios in bundle
-substitutability and versioning. The implementation uses OSGi core services.
+substitutability and versioning. The implementation uses OSGi core services
+in its plain, low level form (no ServiceTracker and other goodies), 
+relying on framework to repeatedy attempt to re-start a bundle if activator
+start() fails with an exception due to unfulfilled service dependencies.
 
 See the OBCC project for more: http://www.assembla.com/spaces/obcc/ .
 
