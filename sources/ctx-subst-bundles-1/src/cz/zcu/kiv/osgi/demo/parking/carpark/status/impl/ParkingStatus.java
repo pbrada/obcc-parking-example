@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import cz.zcu.kiv.osgi.demo.parking.carpark.status.IParkingStatus;
 
 
-
 public class ParkingStatus implements IParkingStatus
 {
 

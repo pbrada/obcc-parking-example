@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cz.zcu.kiv.osgi.demo.parking.carpark.flow.IVehicleFlow;
-import cz.zcu.kiv.osgi.demo.parking.carpark.flow.impl.VehicleFlow;
 import cz.zcu.kiv.osgi.demo.parking.gate.statistics.IGateStatistics;
 import cz.zcu.kiv.osgi.demo.parking.lane.statistics.impl.LaneStatistics;
 
@@ -33,21 +32,21 @@ public class GateStatistics implements IGateStatistics
 	/** 
 	 * Fake service provisioning.
 	 */
-	public static IGateStatistics getInstance() 
+	public static IGateStatistics getInstance(IVehicleFlow parking) 
 	{
 		if (instance == null) {
-			instance = new GateStatistics();
+			instance = new GateStatistics(parking);
 		}
 		return instance;
 	}
 	
 	
-	protected GateStatistics()
+	protected GateStatistics(IVehicleFlow parking)
 	{
 		logger = LoggerFactory.getLogger("parking-demo");
 		logger.info("GateStats.r1 <init>");
 		
-		parkingPlace = VehicleFlow.getInstance();
+		parkingPlace = parking;
 		laneStats = (LaneStatistics) LaneStatistics.getInstance();
 		r = new Random();
 		clear();

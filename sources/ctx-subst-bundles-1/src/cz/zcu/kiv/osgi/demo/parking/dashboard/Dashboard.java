@@ -3,9 +3,7 @@ package cz.zcu.kiv.osgi.demo.parking.dashboard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.gate.statistics.impl.GateStatistics;
 import cz.zcu.kiv.osgi.demo.parking.lane.statistics.ILaneStatistics;
-import cz.zcu.kiv.osgi.demo.parking.lane.statistics.impl.LaneStatistics;
 import cz.zcu.kiv.osgi.demo.parking.statsbase.ICountingStatistics;
 
 public class Dashboard implements Runnable
@@ -19,14 +17,14 @@ public class Dashboard implements Runnable
 	ICountingStatistics gateStats = null;
 	ILaneStatistics laneStats = null;
 	
-	public Dashboard() 
+	public Dashboard(ICountingStatistics gate, ILaneStatistics lane) 
 	{
 		this.logger = LoggerFactory.getLogger("parking-demo");
 		logger.info("Dashboard.r1 <init>");
 		
-		gateStats = GateStatistics.getInstance();
+		gateStats = gate;
 		gateStats.clear();
-		laneStats = LaneStatistics.getInstance();
+		laneStats = lane;
 		laneStats.clear();
 	}
 

@@ -1,8 +1,9 @@
 Bundle-SymbolicName: obcc-parking-example.carpark
 Private-Package: cz.zcu.kiv.osgi.demo.parking.carpark,\
-	cz.zcu.kiv.osgi.demo.parking.carpark.flow.impl
+	cz.zcu.kiv.osgi.demo.parking.carpark.flow.impl,\
+	cz.zcu.kiv.osgi.demo.parking.carpark.status.impl
 Bundle-Version: 1
-Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.carpark.Activator
+Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.carpark.CarParkActivator
 Export-Package: cz.zcu.kiv.osgi.demo.parking.carpark.flow,\
 	cz.zcu.kiv.osgi.demo.parking.carpark.status
 X-ParkingExample-BundleRev: 1

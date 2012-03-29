@@ -1,6 +1,5 @@
 package cz.zcu.kiv.osgi.demo.parking.carpark.flow.impl;
 
-import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
