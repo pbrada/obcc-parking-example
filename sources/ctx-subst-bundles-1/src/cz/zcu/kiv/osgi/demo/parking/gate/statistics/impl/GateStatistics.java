@@ -20,6 +20,7 @@ public class GateStatistics implements IGateStatistics
 	private static GateStatistics instance;
 	
 	private Logger logger = null;
+	private static final String lid = "GateStats.r1";
 	
 	// dependencies
 	private IVehicleFlow parkingPlace = null;
@@ -29,8 +30,9 @@ public class GateStatistics implements IGateStatistics
 	private int leaved = 0;
 	private Random r = null;
 	
-	/** 
-	 * Fake service provisioning.
+	
+	/**
+	 * Create service instance.
 	 */
 	public static IGateStatistics getInstance(IVehicleFlow parking) 
 	{
@@ -44,7 +46,7 @@ public class GateStatistics implements IGateStatistics
 	protected GateStatistics(IVehicleFlow parking)
 	{
 		logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("GateStats.r1 <init>");
+		logger.info(lid+": <init>");
 		
 		parkingPlace = parking;
 		laneStats = (LaneStatistics) LaneStatistics.getInstance();
@@ -94,7 +96,7 @@ public class GateStatistics implements IGateStatistics
 	@Override
 	public String getIdentification()
 	{
-		return "GateStatistics";
+		return lid;
 	}
 
 	@Override

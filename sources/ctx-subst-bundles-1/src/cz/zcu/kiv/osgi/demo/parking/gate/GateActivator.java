@@ -20,6 +20,7 @@ public class GateActivator implements BundleActivator
 {
 	
 	private Logger logger;
+	private static final String lid = "Gate.r1 Activator";
 
 	private ServiceRegistration gateSvcReg;
 	private ServiceRegistration laneSvcReg;
@@ -35,27 +36,27 @@ public class GateActivator implements BundleActivator
 	@Override
 	public void start(BundleContext context) throws Exception
 	{
-		logger.info("Gate.r1 activator: starting");
+		logger.info(lid+": starting");
 		
 		// required services
 		
 		ServiceReference sr = context.getServiceReference(IVehicleFlow.class.getName());
 		if (sr == null) {
-			logger.error("Gate.r1 activator: no parking registered");
+			logger.error(lid+": no parking registered");
 		}
 		else {
 			parking = (IVehicleFlow) context.getService(sr);
 			if (parking == null) {
-				logger.error("Gate.r1 activator: no parking service available");
+				logger.error(lid+": no parking service available");
 			}
 			else {
-				logger.info("Gate.r1 activator: got parking service");
+				logger.info(lid+": got parking service");
 			}
 		}
 
 		if (parking == null) {
-			logger.error("Gate.r1 activator: some service unavailable, exiting");
-			throw new BundleException("Gate.r1 activator: some service unavailable, exiting");
+			logger.error(lid+": some service unavailable, exiting");
+			throw new BundleException(lid+": some service unavailable, exiting");
 		}
 
 		// provided services
@@ -67,7 +68,7 @@ public class GateActivator implements BundleActivator
 		gateSvcReg = context.registerService(gateIds, GateStatistics.getInstance(parking), null);
 		if (null == gateSvcReg)
 			throw new ServiceException("Gate.r1: gate svc registration failed");
-		logger.info("Gate.r1 activator: registered svc ", context.getService(gateSvcReg.getReference()).getClass());
+		logger.info(lid+": registered svc ", context.getService(gateSvcReg.getReference()).getClass());
 
 		String[] laneIds = new String[] {
 				ICountingStatistics.class.getName(),
@@ -76,20 +77,20 @@ public class GateActivator implements BundleActivator
 		laneSvcReg = context.registerService(laneIds, LaneStatistics.getInstance(), null);
 		if (null == laneSvcReg)
 			throw new ServiceException("Gate.r1: lane svc registration failed");
-		logger.info("Gate.r1 activator: registered svc ", context.getService(laneSvcReg.getReference()).getClass());
+		logger.info(lid+": registered svc ", context.getService(laneSvcReg.getReference()).getClass());
 
-		logger.info("Gate.r1 activator: started.");		
+		logger.info(lid+": started.");		
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception
 	{
-		logger.info("Gate.r1 activator: stopping");
+		logger.info(lid+": stopping");
 		gateSvcReg.unregister();
-		logger.info("Gate.r1 activator: unreg gate svc");
+		logger.info(lid+": unreg gate svc");
 		laneSvcReg.unregister();
-		logger.info("Gate.r1 activator: unreg lane svc");
-		logger.info("Gate.r1 activator: stopped.");
+		logger.info(lid+": unreg lane svc");
+		logger.info(lid+": stopped.");
 	}
 
 }

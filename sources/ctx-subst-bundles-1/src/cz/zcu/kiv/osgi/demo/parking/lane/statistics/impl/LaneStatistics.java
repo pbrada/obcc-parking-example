@@ -10,6 +10,7 @@ public class LaneStatistics implements ILaneStatistics
 {
 	private static LaneStatistics instance = null;
 	private Logger logger = null;
+	private static final String lid = "LaneStats.r1";
 	
 	private int  vehicleCount = 0;
 	
@@ -28,14 +29,14 @@ public class LaneStatistics implements ILaneStatistics
 	protected LaneStatistics()
 	{
 		logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("LaneStats.r1 <init>");
+		logger.info(lid+": <init>");
 		clear();
 	}
 	
 	@Override
 	public String getIdentification()
 	{
-		return "LaneStatistics";
+		return lid;
 	}
 
 	@Override

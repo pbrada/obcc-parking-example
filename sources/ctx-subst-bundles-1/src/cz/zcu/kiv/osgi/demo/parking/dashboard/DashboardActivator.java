@@ -14,6 +14,8 @@ public class DashboardActivator implements BundleActivator
 {
 	
 	private Logger logger;
+	private static final String lid = "Dashboard.r1 Activator";
+	
 	private Thread t;
 	
 	// service dependencies
@@ -30,60 +32,60 @@ public class DashboardActivator implements BundleActivator
 	@Override
 	public void start(BundleContext context) throws Exception
 	{
-		logger.info("Dashboard.r1 activator: starting");
+		logger.info(lid+": starting");
 		
 		// required services
 
 		ServiceReference sr;
 		sr = context.getServiceReference(ICountingStatistics.class.getName());
 		if (sr == null) {
-			logger.error("Dashboard.r1 activator: no gate stats registered");
+			logger.error(lid+": no gate stats registered");
 		}
 		else {
 			gateStats = (ICountingStatistics) context.getService(sr);
 			if (gateStats == null) {
-				logger.error("Dashboard.r1 activator: no gate stats service available");
+				logger.error(lid+": no gate stats service available");
 			}
 			else {
-				logger.info("Dashboard.r1 activator: got gate stats");
+				logger.info(lid+": got gate stats");
 			}
 		}
 
 		sr = context.getServiceReference(ILaneStatistics.class.getName());
 		if (sr == null) {
-			logger.error("Dashboard.r1 activator: no lane stats registered");
+			logger.error(lid+": no lane stats registered");
 		}
 		else {
 			laneStats = (ILaneStatistics) context.getService(sr);
 			if (laneStats == null) {
-				logger.error("Dashboard.r1 activator: no lane stats service available");
+				logger.error(lid+": no lane stats service available");
 			}
 			else {
-				logger.info("Dashboard.r1 activator: got lane stats");
+				logger.info(lid+": got lane stats");
 			}
 		}
 
 		if (gateStats == null || laneStats == null) {
-			logger.error("Dashboard.r1 activator: some service unavailable, exiting");
-			throw new BundleException("Dashboard.r1 activator: some service unavailable, exiting");
+			logger.error(lid+": some service unavailable, exiting");
+			throw new BundleException(lid+": some service unavailable, exiting");
 		}
 
 		// requirements ok, go ahead
 		
 		dashboard = new Dashboard(gateStats, laneStats);
 		t = new Thread(dashboard);
-		logger.info("Dashboard activator: spawning thread");
+		logger.info(lid+": spawning thread");
 		t.start();
-		logger.info("Dashboard activator: thread spawned");
+		logger.info(lid+": thread spawned");
 
-		logger.info("Dashboard.r1 activator: started.");
+		logger.info(lid+": started.");
 
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception
 	{
-		logger.info("Dashboard activator: stopped.");
+		logger.info(lid+": stopped.");
 	}
 
 }

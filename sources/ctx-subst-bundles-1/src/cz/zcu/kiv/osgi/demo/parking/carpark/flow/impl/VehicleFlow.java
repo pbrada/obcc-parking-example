@@ -11,6 +11,7 @@ public class VehicleFlow implements IVehicleFlow
 {
 	private static VehicleFlow instance = null;
 	private Logger logger = null;
+	private static final String lid = "VehicleFlow.r1";
 	
 	private ParkingStatus status = null;
 	private int capacity = 0;
@@ -28,7 +29,7 @@ public class VehicleFlow implements IVehicleFlow
 	protected VehicleFlow()
 	{
 		this.logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("VehicleFlow.r1 <init>");
+		logger.info(lid+": <init>");
 		this.status = ParkingStatus.getInstance();
 		this.capacity = 10;
 	}	
@@ -37,7 +38,7 @@ public class VehicleFlow implements IVehicleFlow
 	@Override
 	public void arrive()
 	{
-		logger.info("VehicleFlow: arrive");
+		logger.info(lid+": arrive");
 		if (--capacity <= 0) {
 			capacity = 0;
 			status.setFull(true);
@@ -47,7 +48,7 @@ public class VehicleFlow implements IVehicleFlow
 	@Override
 	public void leave()
 	{
-		logger.info("VehicleFlow: leave");
+		logger.info(lid+": leave");
 		// we don't check reaching max capacity for now
 		if (++capacity > 0) {
 			status.setFull(false);

@@ -12,6 +12,7 @@ public class Dashboard implements Runnable
 	private static final long PAUSE_TIME = 200;
 
 	Logger logger = null;
+	private static final String lid = "Dashboard.r1";
 	
 	// dependencies, intentionally generalized type on this endpoint
 	ICountingStatistics gateStats = null;
@@ -20,7 +21,7 @@ public class Dashboard implements Runnable
 	public Dashboard(ICountingStatistics gate, ILaneStatistics lane) 
 	{
 		this.logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("Dashboard.r1 <init>");
+		logger.info(lid+": <init>");
 		
 		gateStats = gate;
 		gateStats.clear();
@@ -36,17 +37,17 @@ public class Dashboard implements Runnable
 		
 		gateNum = gateStats.getEventCount();
 		laneNum = laneStats.getCountVehiclesPassed();
-		logger.info("Dashboard initial stats: lane passed {}, gate events {}" , laneNum, gateNum );
+		logger.info(lid+": initial stats -- lane passed {}, gate events {}" , laneNum, gateNum );
 		for (int i=0; i<NUM_CYCLES; ++i) {
-			logger.info("*** Dashboard: loop {}",i);
+			logger.info("*** "+lid+": loop {}",i);
 			gateNum = gateStats.getEventCount();
 			laneNum = laneStats.getCountVehiclesPassed();
-			logger.info("*** Dashboard stats: lane passed {}, gate events {}" , laneNum, gateNum );
+			logger.info("*** "+lid+" stats: lane passed {}, gate events {}" , laneNum, gateNum );
 			try {
 				Thread.sleep(PAUSE_TIME);
 			}
 			catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				logger.warn(lid+": thread interrupted");
 				e.printStackTrace();
 			}
 			Thread.yield();

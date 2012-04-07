@@ -11,6 +11,7 @@ public class ParkingStatus implements IParkingStatus
 
 	private static ParkingStatus instance = null;
 	private Logger logger = null;
+	private static final String lid = "ParkingStatus.r1";
 	
 	private boolean isFull = false;
 	
@@ -27,13 +28,13 @@ public class ParkingStatus implements IParkingStatus
 	protected ParkingStatus()
 	{
 		this.logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("ParkingStatus.r1 <init>");
+		logger.info(lid+": <init>");
 	}	
 
 	@Override
 	public boolean isFull()
 	{
-		logger.info("ParkingStatus: isFull {}", isFull);
+		logger.info(lid+": isFull {}", isFull);
 		return isFull;
 	}
 	
