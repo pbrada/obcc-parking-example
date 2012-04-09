@@ -5,12 +5,13 @@ import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Activator implements BundleActivator
+public class LaneActivator implements BundleActivator
 {
 	
 	private Logger logger;
+	private static final String lid = "Lane.r3 Activator";
 	
-	public Activator()
+	public LaneActivator()
 	{
 		this.logger = LoggerFactory.getLogger("parking-demo");
 	}
@@ -18,14 +19,14 @@ public class Activator implements BundleActivator
 	@Override
 	public void start(BundleContext context) throws Exception
 	{
-		logger.info("TrafficLane.r3 activator: start");
+		logger.info(lid+": start");
 		// lane statistics service still provided by Gate component in r3
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception
 	{
-		logger.info("Traffic lane activator: stop");
+		logger.info(lid+": stop");
 	}
 
 }

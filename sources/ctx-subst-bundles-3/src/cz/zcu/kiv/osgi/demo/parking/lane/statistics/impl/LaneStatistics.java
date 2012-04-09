@@ -1,9 +1,11 @@
-package cz.zcu.kiv.osgi.demo.parking.lane.statistics;
+package cz.zcu.kiv.osgi.demo.parking.lane.statistics.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LaneStatistics implements ILaneStatistics
+import cz.zcu.kiv.osgi.demo.parking.lane.statistics.ILaneStatistics;
+
+public class LaneStatistics implements ILaneStatistics, ILaneUpdate
 {
 	private static LaneStatistics instance = null;
 	private Logger logger = null;
@@ -15,7 +17,7 @@ public class LaneStatistics implements ILaneStatistics
 	/**
 	 * Fake service provisioning.
 	 */
-	public static ILaneStatistics getInstance()
+	public static LaneStatistics getInstance()
 	{
 		if (instance == null) {
 			instance = new LaneStatistics();
@@ -74,7 +76,8 @@ public class LaneStatistics implements ILaneStatistics
 		logger.info(getIdentification()+": counters cleared");
 	}
 
-	public void vehiclesPassing(int cnt)
+	@Override
+    public void vehiclesPassing(int cnt)
 	{
 		vehicleCount += cnt;
 		logger.info(getIdentification()+": increased count by {} to {}", cnt, vehicleCount);

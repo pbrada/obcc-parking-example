@@ -1,13 +1,13 @@
-package cz.zcu.kiv.osgi.demo.parking.gate.vehiclesink;
+package cz.zcu.kiv.osgi.demo.parking.gate.vehiclesink.impl;
 
 import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
+import cz.zcu.kiv.osgi.demo.parking.gate.statistics.impl.IGateUpdate;
+import cz.zcu.kiv.osgi.demo.parking.gate.vehiclesink.IVehicleSink;
 import cz.zcu.kiv.osgi.demo.parking.carpark.flow.IVehicleFlow;
-import cz.zcu.kiv.osgi.demo.parking.carpark.flow.VehicleFlow;
 
 
 public class VehicleSink implements IVehicleSink
@@ -15,42 +15,43 @@ public class VehicleSink implements IVehicleSink
 
 	private static VehicleSink instance = null;
 	private Logger logger = null;
+	private static final String lid = "VehicleSink.r3";
 	
+    private IGateUpdate gate;
+    
 	// dependencies
 	private IVehicleFlow parkingPlace = null;
 	
-	private GateStatistics gate;
-	
 	/** 
-	 * Fake service provisioning.
+	 * Create service instance.
 	 */
-	public static IVehicleSink getInstance() 
+	public static VehicleSink getInstance(IVehicleFlow flow, IGateUpdate gate) 
 	{
 		if (instance == null) {
-			instance = new VehicleSink();
+			instance = new VehicleSink(flow, gate);
 		}
 		return instance;
 	}
 	
 	
-	protected VehicleSink()
+	protected VehicleSink(IVehicleFlow flow, IGateUpdate gate)
 	{
 		logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("VehicleSink.r3 <init>");
-		parkingPlace = VehicleFlow.getInstance();
-		gate = (GateStatistics) GateStatistics.getInstance();
+		logger.info(lid+": <init>");
+		parkingPlace = flow;
+		this.gate = gate;
 	}
 	
 	@Override
 	public void consumeVehicle()
 	{
-		logger.info("VehicleSink: consume");
+		logger.info(lid+": consume");
 		parkingPlace.arrive();
 		gate.vehiclesArrived(1);
 		// simulate vehicle departure
 		Random r = new Random();
 		int numVehiclesToLeave = r.nextInt(3);
-		logger.info("VehicleSink: dice made {} cars leave", numVehiclesToLeave);
+		logger.info(lid+": dice made {} cars leave", numVehiclesToLeave);
 		for (int i=0; i<numVehiclesToLeave; ++i) {
 			parkingPlace.leave();
 			gate.vehiclesDeparted(1);

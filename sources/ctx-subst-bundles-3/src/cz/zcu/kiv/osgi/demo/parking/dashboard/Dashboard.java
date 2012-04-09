@@ -3,11 +3,8 @@ package cz.zcu.kiv.osgi.demo.parking.dashboard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//import cz.zcu.kiv.osgi.demo.parking.api.ICountingStatistics;
-import cz.zcu.kiv.osgi.demo.parking.gate.statistics.GateStatistics;
-import cz.zcu.kiv.osgi.demo.parking.gate.statistics.IGateStatistics;
 import cz.zcu.kiv.osgi.demo.parking.lane.statistics.ILaneStatistics;
-import cz.zcu.kiv.osgi.demo.parking.lane.statistics.LaneStatistics;
+import cz.zcu.kiv.osgi.demo.parking.gate.statistics.IGateStatistics;
 
 public class Dashboard implements Runnable
 {
@@ -16,20 +13,21 @@ public class Dashboard implements Runnable
 	private static final long PAUSE_TIME = 300;
 	
 	Logger logger = null;
+    private static final String lid = "Dashboard.r3";
 
 	// dependencies, full gate stats now
 	IGateStatistics gateStats = null;
 	ILaneStatistics laneStats = null;
 	
-	public Dashboard() 
+	public Dashboard(IGateStatistics gate, ILaneStatistics lane) 
 	{
 		this.logger = LoggerFactory.getLogger("parking-demo");
-		logger.info("Dashboard.r3 <init>");
+		logger.info(lid+": <init>");
 		
-		gateStats = GateStatistics.getInstance();
+		gateStats = gate;
 		gateStats.clear();
-		laneStats = LaneStatistics.getInstance();	// from Gate, not from TrafficLane bundle; see imports
-		laneStats.clear();
+		laneStats = lane;
+		laneStats.clear();    // from Gate, not from TrafficLane bundle
 	}
 	
 	@Override
@@ -38,34 +36,34 @@ public class Dashboard implements Runnable
 		int gateNum;
 		int laneNum;
 		
-		logger.info("(!) Dashboard: thread starting");
+		logger.info("(!)"+lid+": thread starting");
 		gateNum = gateStats.getEventCount();
 		laneNum = laneStats.getCountVehiclesPassed();
-		logger.info("Dashboard initial stats: lane passed {}, gate events {}" , laneNum, gateNum );
+		logger.info(lid+": initial stats -- lane passed {}, gate events {}" , laneNum, gateNum );
 		for (int i=0; i<NUM_CYCLES; ++i) {
-			logger.info("*** Dashboard: loop {}",i);
+			logger.info("*** "+lid+": loop {}",i);
 			gateNum = gateStats.getEventCount();
 			laneNum = laneStats.getCountVehiclesPassed();
-			logger.info("*** Dashboard stats: lane passed {}, gate events {}" , laneNum, gateNum );
+			logger.info("*** "+lid+" stats: lane passed {}, gate events {}" , laneNum, gateNum );
 			try {
 				Thread.sleep(PAUSE_TIME);
 			}
 			catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				logger.warn(lid+": thread interrupted");
 				e.printStackTrace();
 			}
 			Thread.yield();
 		}
 
-		logger.info("(!) Dashboard: thread stopping");
+		logger.info("(!)"+lid+": thread stopping");
 		
 		logger.info("-----");
-		logger.info("Dashboard final stats: lane events {}" , laneStats.getEventCount() );
-		logger.info("Dashboard final stats: lane vehicles {}", laneStats.getCountVehiclesPassed() );
-		logger.info("Dashboard final stats: gate events {}" , gateStats.getEventCount() );
-		logger.info("Dashboard final stats: gate entered {}", gateStats.getNumberOfVehiclesEntering() );
-		logger.info("Dashboard final stats: gate leaved  {}",  gateStats.getNumberOfVehiclesLeaving() );
-		
+		logger.info(lid+": final stats: lane events {}" , laneStats.getEventCount() );
+		logger.info(lid+": final stats: lane vehicles {}", laneStats.getCountVehiclesPassed() );
+		logger.info(lid+": final stats: gate events {}" , gateStats.getEventCount() );
+		logger.info(lid+": final stats: gate entered {}", gateStats.getNumberOfVehiclesEntering() );
+		logger.info(lid+": final stats: gate leaved  {}",  gateStats.getNumberOfVehiclesLeaving() );
+		logger.info("-----");
 	}
 
 }
