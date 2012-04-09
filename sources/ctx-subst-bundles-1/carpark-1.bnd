@@ -1,4 +1,4 @@
-Bundle-SymbolicName: obcc-parking-example.carpark
+Bundle-SymbolicName: obcc-parking-example.carpark-svc
 Private-Package: cz.zcu.kiv.osgi.demo.parking.carpark,\
 	cz.zcu.kiv.osgi.demo.parking.carpark.flow.impl,\
 	cz.zcu.kiv.osgi.demo.parking.carpark.status.impl

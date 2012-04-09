@@ -1,0 +1,7 @@
+Bundle-SymbolicName: obcc-parking-example.trafficlane-svc
+Private-Package: cz.zcu.kiv.osgi.demo.parking.lane,\
+	cz.zcu.kiv.osgi.demo.parking.lane.statistics.impl
+Bundle-Version: 1
+Bundle-Activator: cz.zcu.kiv.osgi.demo.parking.lane.LaneActivator
+X-ParkingExample-BundleRev: 1
+Export-Package: cz.zcu.kiv.osgi.demo.parking.lane.statistics
