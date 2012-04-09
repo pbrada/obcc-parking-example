@@ -67,7 +67,7 @@ public class GateActivator implements BundleActivator
 		};
 		gateSvcReg = context.registerService(gateIds, GateStatistics.getInstance(parking), null);
 		if (null == gateSvcReg)
-			throw new ServiceException("Gate.r1: gate svc registration failed");
+			throw new ServiceException(lid+": gate svc registration failed");
 		logger.info(lid+": registered svc ", context.getService(gateSvcReg.getReference()).getClass());
 
 		String[] laneIds = new String[] {
@@ -76,7 +76,7 @@ public class GateActivator implements BundleActivator
 		};
 		laneSvcReg = context.registerService(laneIds, LaneStatistics.getInstance(), null);
 		if (null == laneSvcReg)
-			throw new ServiceException("Gate.r1: lane svc registration failed");
+			throw new ServiceException(lid+": lane svc registration failed");
 		logger.info(lid+": registered svc ", context.getService(laneSvcReg.getReference()).getClass());
 
 		logger.info(lid+": started.");		
